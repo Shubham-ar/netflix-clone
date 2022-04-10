@@ -24,25 +24,25 @@ const Row = ({ title, fetchURL, isLargeRow }) => {
   return (
     <div className="row">
       {/* title */}
-      <h2>{title}</h2>
+      <h2 className="row__title">{title}</h2>
 
       {/* container -> posters */}
-        <div className="row__posters">
-          {movies.map((movie) => (
-            <img
-              // key is unique to the react, key means that if anything changes in the row, then react does not
-              //   renders the entire row, it just renders what needs to be rendered
-              // this is an optimization step
-              key={movie.id}
-              className={`row__poster ${isLargeRow && "row__posterLarge"}`}
-              src={`${base_url}${
-                isLargeRow ? movie.poster_path : movie.backdrop_path
-              }`}
-              alt={movie.name}
-            />
-          ))}
-        </div>
+      <div className="row__posters">
+        {movies.map((movie) => (
+          <img
+            // key is unique to the react, key means that if anything changes in the row, then react does not
+            //   renders the entire row, it just renders what needs to be rendered
+            // this is an optimization step
+            key={movie.id}
+            className={`row__poster ${isLargeRow && "row__posterLarge"}`}
+            src={`${base_url}${
+              isLargeRow ? movie.poster_path : movie.backdrop_path
+            }`}
+            alt={movie.name}
+          />
+        ))}
       </div>
+    </div>
   );
 };
 

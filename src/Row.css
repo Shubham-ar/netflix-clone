@@ -10,7 +10,9 @@
 .row__posters::-webkit-scrollbar {
   display: none;
 }
-
+.row__title {
+  margin-left: 15px;
+}
 .row__poster {
   object-fit: contain;
   /* to preserve the aspect ratio objectfit is used */
